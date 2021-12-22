@@ -67,8 +67,7 @@ public class ConfigBuilder {
         loadSettingsFromProperties();
         configFactory = new PropertiesConfigFactory(loadStringProperty(SettingsConstants.ZM_SSO_CALLBACK_URL), properties);
         logoutHandler = new ZmLogoutHandler<>();
-        config = buildConfig();
-
+        
         saveInSession = loadBooleanProperty(SettingsConstants.ZM_SSO_SAVE_IN_SESSION);
         multiProfile = loadBooleanProperty(SettingsConstants.ZM_SSO_MULTI_PROFILE);
         renewSession = loadBooleanProperty(SettingsConstants.ZM_SSO_RENEW_SESSION);
@@ -77,6 +76,7 @@ public class ConfigBuilder {
         destroySession = loadBooleanProperty(SettingsConstants.ZM_SSO_DESTROY_SESSION);
         centralLogout = loadBooleanProperty(SettingsConstants.ZM_SSO_CENTRAL_LOGOUT);
         postLogoutURL = loadStringProperty(SettingsConstants.ZM_SSO_POST_LOGOUT_URL);
+        config = buildConfig();
     }
 
     public static ConfigBuilder getInstance() {
